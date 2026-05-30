@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BigForm</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <header>
+      <img
+        class="header-logo"
+        src="Dr_Pepper_Logo_neu.png"
+        alt="DrPepper Logo"
+      />
+      <ul>
+        <li>
+          <a
+            class="header-link"
+            href="#"
+            onclick="
+              window.alert(
+                'Sorry, the page you are looking for is not available hehe :)',
+              )
+            "
+            >HOME</a
+          >
+        </li>
+        <li>
+          <a
+            class="header-link"
+            href="#"
+            onclick="
+              window.alert(
+                'Sorry, the page you are looking for is not available hehe :)',
+              )
+            "
+            >PRODUCTS</a
+          >
+        </li>
+        <li>
+          <a
+            class="header-link"
+            href="#"
+            onclick="
+              window.alert(
+                'Sorry, the page you are looking for is not available hehe :)',
+              )
+            "
+            >MERCH</a
+          >
+        </li>
+        <li>
+          <a
+            class="header-link"
+            href="#"
+            onclick="
+              window.alert(
+                'Sorry, the page you are looking for is not available hehe :)',
+              )
+            "
+            >TUITION</a
+          >
+        </li>
+        <li>
+          <a
+            class="header-link"
+            href="#"
+            onclick="
+              window.alert(
+                'Sorry, the page you are looking for is not available hehe :)',
+              )
+            "
+            >PRO ZONE</a
+          >
+        </li>
+      </ul>
+      <img
+        class="header-logo2"
+        src="Dr_Pepper_Logo_neu.png"
+        alt="DrPepper Logo"
+      />
+    </header>
+    <main id="main-content">
+      <section class="section1 active" id="launchPage">
+        <div class="CTA">
+          <div class="CTA-container">
+            <div class="CTA-text">
+              <h1>CREATE A NEW FLAVOR</h1>
+              <p class="intro-text">Start now by following the guide</p>
+            </div>
+            <button type="button" onclick="switchTab('step1')">
+              <span>START</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <form
+        action="https://formsubmit.co/thomas.kaeser12@gmail.com"
+        method="POST"
+      >
+        <section class="section2" id="step1">
+          <div class="container">
+            <div class="back" onclick="switchTab('launchPage')">
+              <i data-lucide="arrow-left" onclick="switchTab('launchPage')"></i>
+              <span class="back-text"
+                ><a onclick="switchTab('launchPage')">BACK</a></span
+              >
+            </div>
+
+            <div class="all-inputs">
+              <div class="image-infos-container">
+                <div class="drop-button">
+                  <div class="drop-zone" id="drop-zone">
+                    <input
+                      type="file"
+                      id="file-input"
+                      accept="image/*"
+                      name="file-dropped"
+                      hidden
+                    />
+                    <label for="file-input" class="drop-label">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="156"
+                        height="124"
+                        viewBox="0 0 156 124"
+                        fill="none"
+                      >
+                        <g opacity="0.28" clip-path="url(#clip0_2_734)">
+                          <path
+                            d="M77.6364 93.0909L108.727 54.1818H85.4546V0H69.8182V54.1818H46.5455L77.6364 93.0909ZM139.636 108.545H15.6364V54.1818H0V108.545C0 112.788 1.51514 116.424 4.54545 119.455C7.57577 122.485 11.2727 124 15.6364 124H139.636C144 124 147.697 122.485 150.727 119.455C153.758 116.424 155.273 112.788 155.273 108.545V54.1818H139.636V108.545Z"
+                            fill="#F5DFCA"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_2_734">
+                            <rect width="155.273" height="124" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                      <span class="drop-zone-text" id="drop-text"
+                        >Drop your can image here</span
+                      >
+                      <span class="drop-requirements">
+                        Only JPG/JEPG/PNG/WebP/GIF/SVG accepted
+                      </span>
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    class="reset-btn"
+                    id="reset-btn"
+                    onclick="resetDropZone()"
+                    style="display: none"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <div class="infos">
+                  <div class="product-name">
+                    <label for="product-name">Product Name</label>
+                    <input
+                      type="text"
+                      placeholder="Name the product here"
+                      name="product-name"
+                      class="product-name-input"
+                      id="product-name"
+                      required
+                    />
+                  </div>
+
+                  <div class="flavor-description">
+                    <label for="flavor-description">Flavor Description</label>
+                    <textarea
+                      id="flavor-description"
+                      name="flavor-description"
+                      placeholder="Describe the flavor here"
+                      class="flavor-description-input"
+                    ></textarea>
+                  </div>
+
+                  <div class="color-picker-container">
+                    <label for="colorInput">Background-color :</label>
+                    <div class="color-picker-text">
+                      <input
+                        type="color"
+                        id="colorInput"
+                        value="#3498db"
+                        class="color-input"
+                        name="color-input"
+                      />
+                      <div class="outputs">
+                        <code id="colorResult">#3498db</code>
+                        <select id="formatSelect" class="colorSelector">
+                          <option value="hex">HEX</option>
+                          <option value="rgba">RGBA</option>
+                          <option value="hsl">HSL</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="next-button"
+              onclick="switchTab('step2')"
+              id="nextBtn"
+            >
+              <span>NEXT</span>
+            </button>
+          </div>
+        </section>
+        <section class="section3" id="step2">
+          <div class="container">
+            <div class="back" onclick="switchTab('step1')">
+              <i data-lucide="arrow-left" onclick="switchTab('step1')"></i>
+              <span class="back-text"
+                ><a onclick="switchTab('step1')">BACK</a></span
+              >
+            </div>
+            <div class="step3content">
+              <div class="step3infos">
+                <label class="perserving">Per Serving</label>
+                <div class="input-complete">
+                  <div class="inputlabel">
+                    <label class="input-title" for="product-size">Size:</label>
+                    <input
+                      type="text"
+                      placeholder="Enter value here"
+                      name="product-size"
+                      class="product-infos-input"
+                      required
+                    />
+                  </div>
+                  <span class="input-unity">fl oz</span>
+                </div>
+                <div class="input-complete">
+                  <div class="input-label">
+                    <label class="input-title" for="product-calories"
+                      >Calories:</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter value here"
+                      name="product-calories"
+                      class="product-infos-input"
+                      required
+                    />
+                  </div>
+                  <span class="input-unity">CAL</span>
+                </div>
+                <div class="input-complete">
+                  <div class="input-label">
+                    <label class="input-title" for="product-tf"
+                      >Total Fat:</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter value here"
+                      name="product-tf"
+                      class="product-infos-input"
+                      required
+                    />
+                  </div>
+                  <span class="input-unity">G</span>
+                </div>
+                <div class="input-complete">
+                  <div class="input-label">
+                    <label class="input-title" for="product-sodium"
+                      >Sodium:</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter value here"
+                      name="product-sodium"
+                      class="product-infos-input"
+                      required
+                    />
+                  </div>
+                  <span class="input-unity">MG</span>
+                </div>
+                <div class="input-complete">
+                  <div class="input-label">
+                    <label class="input-title" for="product-tc"
+                      >Total Carbohydrates:</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter value here"
+                      name="product-tc"
+                      class="product-infos-input"
+                      required
+                    />
+                  </div>
+                  <span class="input-unity">G</span>
+                </div>
+                <div class="input-complete">
+                  <div class="input-label">
+                    <label class="input-title" for="product-sugar"
+                      >Sugar:</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter value here"
+                      name="product-sugar"
+                      class="product-infos-input"
+                      required
+                    />
+                  </div>
+                  <span class="input-unity">G</span>
+                </div>
+                <div class="input-complete">
+                  <div class="input-label">
+                    <label class="input-title" for="product-protein"
+                      >Protein:</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter value here"
+                      name="product-protein"
+                      class="product-infos-input"
+                      required
+                    />
+                  </div>
+                  <span class="input-unity">G</span>
+                </div>
+              </div>
+
+              <div class="ingredientinput">
+                <label for="product-ingredients">Ingredients</label>
+                <textarea
+                  id="flavor-ingredients"
+                  name="product-ingredients"
+                  placeholder="List all ingredients here"
+                  class="flavor-ingredients-input"
+                ></textarea>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="next-button"
+              onclick="goToNext('lastPage')"
+            >
+              FINISH
+            </button>
+          </div>
+        </section>
+      </form>
+      <section class="section4" id="lastPage">
+        <div class="CTA">
+          <div class="CTA-container">
+            <div class="CTA-text">
+              <h1>THANK YOU !</h1>
+              <p class="intro-text">Go back home to discover other flavours</p>
+            </div>
+            <button type="button" onclick="switchTab('launchPage')">
+              <span>GO BACK HOME</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
