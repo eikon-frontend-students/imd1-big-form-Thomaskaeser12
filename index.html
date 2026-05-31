@@ -18,11 +18,13 @@
         <li>
           <a
             class="header-link"
-            href="#"
+            href="https://www.drpepper.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             onclick="
-              window.alert(
-                'Sorry, the page you are looking for is not available hehe :)',
-              )
+              return window.confirm(
+                'Are you sure you want to leave this page?',
+              );
             "
             >HOME</a
           >
@@ -30,11 +32,13 @@
         <li>
           <a
             class="header-link"
-            href="#"
+            href="https://www.drpepper.com/products"
+            target="_blank"
+            rel="noopener noreferrer"
             onclick="
-              window.alert(
-                'Sorry, the page you are looking for is not available hehe :)',
-              )
+              return window.confirm(
+                'Are you sure you want to leave this page?',
+              );
             "
             >PRODUCTS</a
           >
@@ -42,11 +46,13 @@
         <li>
           <a
             class="header-link"
-            href="#"
+            href="https://www.drpepperstore.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             onclick="
-              window.alert(
-                'Sorry, the page you are looking for is not available hehe :)',
-              )
+              return window.confirm(
+                'Are you sure you want to leave this page?',
+              );
             "
             >MERCH</a
           >
@@ -54,11 +60,13 @@
         <li>
           <a
             class="header-link"
-            href="#"
+            href="https://www.drpepper.com/tuition-finalists"
+            target="_blank"
+            rel="noopener noreferrer"
             onclick="
-              window.alert(
-                'Sorry, the page you are looking for is not available hehe :)',
-              )
+              return window.confirm(
+                'Are you sure you want to leave this page?',
+              );
             "
             >TUITION</a
           >
@@ -66,11 +74,13 @@
         <li>
           <a
             class="header-link"
-            href="#"
+            href="https://www.drpepper.com/cowboys"
+            target="_blank"
+            rel="noopener noreferrer"
             onclick="
-              window.alert(
-                'Sorry, the page you are looking for is not available hehe :)',
-              )
+              return window.confirm(
+                'Are you sure you want to leave this page?',
+              );
             "
             >PRO ZONE</a
           >
@@ -143,7 +153,7 @@
                       <span class="drop-zone-text" id="drop-text"
                         >Drop your can image here</span
                       >
-                      <span class="drop-requirements">
+                      <span class="drop-acceptations">
                         Only JPG/JEPG/PNG/WebP/GIF/SVG accepted
                       </span>
                     </label>
@@ -222,8 +232,8 @@
                 ><a onclick="switchTab('step1')">BACK</a></span
               >
             </div>
-            <div class="step3content">
-              <div class="step3infos">
+            <div class="step2content">
+              <div class="step2infos">
                 <label class="perserving">Per Serving</label>
                 <div class="input-complete">
                   <div class="inputlabel">
@@ -233,6 +243,7 @@
                       placeholder="Enter value here"
                       name="product-size"
                       class="product-infos-input"
+                      id="product-size"
                       required
                     />
                   </div>
@@ -248,6 +259,7 @@
                       placeholder="Enter value here"
                       name="product-calories"
                       class="product-infos-input"
+                      id="product-calories"
                       required
                     />
                   </div>
@@ -263,6 +275,7 @@
                       placeholder="Enter value here"
                       name="product-tf"
                       class="product-infos-input"
+                      id="product-tf"
                       required
                     />
                   </div>
@@ -277,6 +290,7 @@
                       type="text"
                       placeholder="Enter value here"
                       name="product-sodium"
+                      id="product-sodium"
                       class="product-infos-input"
                       required
                     />
@@ -292,6 +306,7 @@
                       type="text"
                       placeholder="Enter value here"
                       name="product-tc"
+                      id="product-tc"
                       class="product-infos-input"
                       required
                     />
@@ -308,6 +323,7 @@
                       placeholder="Enter value here"
                       name="product-sugar"
                       class="product-infos-input"
+                      id="product-sugar"
                       required
                     />
                   </div>
@@ -323,6 +339,7 @@
                       placeholder="Enter value here"
                       name="product-protein"
                       class="product-infos-input"
+                      id="product-protein"
                       required
                     />
                   </div>
@@ -333,7 +350,7 @@
               <div class="ingredientinput">
                 <label for="product-ingredients">Ingredients</label>
                 <textarea
-                  id="flavor-ingredients"
+                  id="product-ingredients"
                   name="product-ingredients"
                   placeholder="List all ingredients here"
                   class="flavor-ingredients-input"
