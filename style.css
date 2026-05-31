@@ -12,6 +12,8 @@
   --other-font-family: "Aktiv Grotesk Ex";
 }
 
+/* ==== Base code === */
+
 body {
   font-family: var(--font-family);
   background-color: #921634;
@@ -75,43 +77,6 @@ code {
   line-height: normal;
   letter-spacing: 1px;
 }
-
-label:not(.drop-label) {
-  color: var(--font-color);
-  font-family: var(--font-family);
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  padding: 0 5%;
-}
-
-.header-logo {
-  width: clamp(80px, 116px, 200px);
-}
-
-.header-logo2 {
-  width: clamp(80px, 116px, 200px);
-  visibility: hidden;
-}
-
-.header-link {
-  color: var(--font-color);
-  text-align: center;
-  font-family: var(--other-font-family);
-  font-size: 14px;
-  font-weight: 800;
-  font-variant: small-caps;
-  letter-spacing: 0.28px;
-  text-decoration: none;
-}
-
 input {
   color: var(--font-color);
   padding: 5px 0 5px 10px;
@@ -152,6 +117,46 @@ textarea:focus {
   transition: all 0.2s ease;
 }
 
+label:not(.drop-label) {
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ==== header ==== */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 5%;
+}
+
+.header-logo {
+  width: clamp(80px, 116px, 200px);
+}
+
+.header-logo2 {
+  width: clamp(80px, 116px, 200px);
+  visibility: hidden;
+}
+
+.header-link {
+  color: var(--font-color);
+  text-align: center;
+  font-family: var(--other-font-family);
+  font-size: 14px;
+  font-weight: 800;
+  font-variant: small-caps;
+  letter-spacing: 0.28px;
+  text-decoration: none;
+}
+
+/* ==== sections === */
+
 section {
   display: none;
 }
@@ -164,6 +169,8 @@ section.active {
   background-color: #921634;
   min-height: 100vh;
 }
+
+/* ==== buttons zone ==== */
 
 button {
   display: inline-flex;
@@ -226,6 +233,8 @@ button:active {
   font-variant: small-caps;
 }
 
+/* ==== CTA LaunchPage ==== */
+
 .CTA {
   display: flex;
   flex-direction: column;
@@ -250,6 +259,8 @@ button:active {
   gap: 22px;
 }
 
+/* ==== Step1 ==== */
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -273,6 +284,8 @@ button:active {
   gap: 30px;
   text-align: left;
 }
+
+/* ==== Step1 / DropZone ==== */
 
 .drop-zone {
   width: 320px;
@@ -317,6 +330,8 @@ button:active {
   gap: 20px;
 }
 
+/* ==== Step1 / Product Name ==== */
+
 .product-name {
   display: flex;
   flex-direction: column;
@@ -346,6 +361,8 @@ button:active {
   opacity: 0.31;
 }
 
+/* ==== Step1 / Flavor Description ==== */
+
 .flavor-description {
   display: flex;
   flex-direction: column;
@@ -359,6 +376,8 @@ button:active {
   min-height: 150px;
   box-sizing: border-box;
 }
+
+/* ==== Step1 / Color Picker ==== */
 
 .color-picker-container {
   display: flex;
@@ -403,6 +422,8 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   outline: none;
 }
 
+/* ==== Step2 ==== */
+
 .step2content {
   display: flex;
   flex-direction: column;
@@ -417,6 +438,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   flex-direction: column;
   gap: 5px;
 }
+/* ==== Step2 / Inputs ==== */
 
 .inputlabel {
   display: flex;
@@ -452,6 +474,8 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   font-size: var(--font-size);
 }
 
+/* ==== Step2 / Ingredients ==== */
+
 .ingredientinput {
   display: flex;
   flex-direction: column;
@@ -466,6 +490,9 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   min-height: 120px;
   box-sizing: border-box;
 }
+
+/* ==== @media queries ==== */
+
 @media (min-width: 300px) {
   .all-inputs {
     margin-top: 10vh;
@@ -560,6 +587,9 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     overflow-y: auto;
   }
 }
+
+/* ==== animations ==== */
+
 @keyframes comeFromRight {
   0% {
     transform: translateX(100%) rotate(-20px);
@@ -599,20 +629,11 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.section3 .step3content {
+.section3 .step2content {
   opacity: 0;
   transform: translateY(100vh);
 }
 
-.section3.active .step3content {
-  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.section1 .DRpeppercan {
-  opacity: 1;
-  transform: translateY(0vh);
-}
-
-.section1.active .DRpeppercan {
+.section3.active .step2content {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

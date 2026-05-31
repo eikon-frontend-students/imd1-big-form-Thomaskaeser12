@@ -31,10 +31,12 @@ function showImagePreview(file) {
     dropZone.style.backgroundRepeat = "no-repeat";
     dropZone.style.backgroundPosition = "center";
     dropZone.style.borderStyle = "none";
+    dropZone.style.filter = "drop-shadow(0px 30px 40px rgba(77, 18, 18, 1))";
   };
 
   reader.readAsDataURL(file);
 }
+
 function resetDropZone() {
   const label = dropZone.querySelector(".drop-label");
   label.style.display = "flex";
@@ -42,8 +44,11 @@ function resetDropZone() {
   dropZone.style.removeProperty("background-image");
   dropZone.style.borderStyle = "dashed";
 
+  dropZone.style.removeProperty("filter");
+
   fileInput.value = "";
 }
+
 const colorInput = document.getElementById("colorInput");
 const formatSelect = document.getElementById("formatSelect");
 const colorResult = document.getElementById("colorResult");
@@ -65,7 +70,6 @@ function updateDisplay() {
 
   const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
   const texteCouleur = luminance > 0.5 ? "#000000" : "#ffffff";
-  // ------------------------------------
 
   if (format === "rgba") {
     finalValue = `rgba(${r}, ${g}, ${b}, 1)`;
