@@ -32,6 +32,7 @@ function showImagePreview(file) {
     dropZone.style.backgroundPosition = "center";
     dropZone.style.borderStyle = "none";
     dropZone.style.filter = "drop-shadow(0px 30px 40px rgba(77, 18, 18, 1))";
+    dropZone.style.transition = "filter 0.3s ease";
   };
 
   reader.readAsDataURL(file);
@@ -143,14 +144,4 @@ btnNext.addEventListener("click", (e) => {
   section2.scrollIntoView({ behavior: "smooth" });
 
   section2.classList.add("active");
-});
-
-let estAppuye = false;
-
-window.addEventListener("mousedown", () => {
-  estAppuye = true;
-});
-
-window.addEventListener("mouseup", () => {
-  estAppuye = false;
 });

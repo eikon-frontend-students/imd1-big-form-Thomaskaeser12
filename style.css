@@ -52,13 +52,18 @@ p {
   font-weight: 400;
   line-height: normal;
 }
-
+img {
+  cursor: pointer;
+}
 a {
   text-decoration: none;
   color: var(--font-color);
   width: clamp(16px, 24px, 32px);
 }
-
+.header-link:hover {
+  text-decoration: underline;
+  animation: 0.5s ease-in-out 0s infinite alternate;
+}
 ul {
   display: flex;
   justify-content: center;
@@ -474,6 +479,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   font-size: var(--font-size);
 }
 
+.product-infos-input::-webkit-outer-spin-button,
+.product-infos-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* ==== Step2 / Ingredients ==== */
 
 .ingredientinput {
@@ -629,11 +640,65 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.section3 .step2content {
+.section3 .step2infos {
   opacity: 0;
-  transform: translateY(100vh);
+  transform: translateX(100vw);
 }
 
-.section3.active .step2content {
+.section3.active .step2infos {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section3 .ingredientinput {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
+.section3.active .ingredientinput {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+}
+
+.section2 .next-button {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
+.section2.active .next-button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
+}
+
+.section3 .next-button {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
+.section3.active .next-button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
+}
+
+.section1 .hero {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
+.section1.active .hero {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section1 .intro-text {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
+.section1.active .intro-text {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+}
+
+.section1 button {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
+.section1.active button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
 }

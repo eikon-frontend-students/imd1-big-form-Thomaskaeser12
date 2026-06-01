@@ -25,11 +25,23 @@
   </head>
   <body>
     <header>
-      <img
-        class="header-logo"
-        src="Dr_Pepper_Logo_neu.png"
-        alt="DrPepper Logo"
-      />
+      <div class="header-image-container">
+        <a
+          class="header-logo-link"
+          href="https://www.drpepper.com/"
+          onclick="
+            return window.confirm('Are you sure you want to leave this page?');
+          "
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="header-logo"
+            src="Dr_Pepper_Logo_neu.png"
+            alt="DrPepper Logo"
+          />
+        </a>
+      </div>
       <ul>
         <li>
           <a
@@ -113,7 +125,7 @@
         <div class="CTA">
           <div class="CTA-container">
             <div class="CTA-text">
-              <h1>CREATE A NEW FLAVOR</h1>
+              <h1 class="hero">CREATE A NEW FLAVOR</h1>
               <p class="intro-text">Start now by following the guide</p>
             </div>
             <button type="button" onclick="switchTab('step1')">
@@ -122,10 +134,7 @@
           </div>
         </div>
       </section>
-      <form
-        action="https://formsubmit.co/thomas.kaeser12@gmail.com"
-        method="POST"
-      >
+      <form action="https://formspree.io/f/mvzyjryr" method="POST">
         <section class="section2" id="step1">
           <div class="container">
             <div class="back" onclick="switchTab('launchPage')">
@@ -194,7 +203,7 @@
                       name="product-name"
                       class="product-name-input"
                       id="product-name"
-                      required
+                      autocomplete="off"
                     />
                   </div>
 
@@ -205,6 +214,8 @@
                       name="flavor-description"
                       placeholder="Describe the flavor here"
                       class="flavor-description-input"
+                      required
+                      autocomplete="off"
                     ></textarea>
                   </div>
 
@@ -256,12 +267,13 @@
                   <div class="inputlabel">
                     <label class="input-title" for="product-size">Size:</label>
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Enter value here"
                       name="product-size"
                       class="product-infos-input"
                       id="product-size"
                       required
+                      autocomplete="off"
                     />
                   </div>
                   <span class="input-unity">fl oz</span>
@@ -272,12 +284,13 @@
                       >Calories:</label
                     >
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Enter value here"
                       name="product-calories"
                       class="product-infos-input"
                       id="product-calories"
                       required
+                      autocomplete="off"
                     />
                   </div>
                   <span class="input-unity">CAL</span>
@@ -288,12 +301,13 @@
                       >Total Fat:</label
                     >
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Enter value here"
                       name="product-tf"
                       class="product-infos-input"
                       id="product-tf"
                       required
+                      autocomplete="off"
                     />
                   </div>
                   <span class="input-unity">G</span>
@@ -304,12 +318,13 @@
                       >Sodium:</label
                     >
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Enter value here"
                       name="product-sodium"
                       id="product-sodium"
                       class="product-infos-input"
                       required
+                      autocomplete="off"
                     />
                   </div>
                   <span class="input-unity">MG</span>
@@ -320,12 +335,13 @@
                       >Total Carbohydrates:</label
                     >
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Enter value here"
                       name="product-tc"
                       id="product-tc"
                       class="product-infos-input"
                       required
+                      autocomplete="off"
                     />
                   </div>
                   <span class="input-unity">G</span>
@@ -336,12 +352,13 @@
                       >Sugar:</label
                     >
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Enter value here"
                       name="product-sugar"
                       class="product-infos-input"
                       id="product-sugar"
                       required
+                      autocomplete="off"
                     />
                   </div>
                   <span class="input-unity">G</span>
@@ -352,12 +369,13 @@
                       >Protein:</label
                     >
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Enter value here"
                       name="product-protein"
                       class="product-infos-input"
                       id="product-protein"
                       required
+                      autocomplete="off"
                     />
                   </div>
                   <span class="input-unity">G</span>
@@ -371,6 +389,7 @@
                   name="product-ingredients"
                   placeholder="List all ingredients here"
                   class="flavor-ingredients-input"
+                  autocomplete="off"
                 ></textarea>
               </div>
             </div>
