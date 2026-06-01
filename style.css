@@ -613,12 +613,32 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   }
 }
 
+.section1 .hero,
+.section1 .intro-text,
+.section1 button,
 .section2 .infos,
 .section2 .drop-zone,
 .section2 .product-name,
-.section2 .flavor-description {
+.section2 .flavor-description,
+.section2 .color-picker-container,
+.section3 .step2infos,
+.section3 .ingredientinput,
+.section2 .next-button,
+.section3 .next-button {
   opacity: 0;
   transform: translateX(100vw);
+}
+
+.section1.active .hero {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section1.active .intro-text {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+}
+
+.section1.active button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
 }
 
 .section2.active .drop-zone {
@@ -641,65 +661,18 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.section3 .step2infos {
-  opacity: 0;
-  transform: translateX(100vw);
+.section2.active .next-button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
 }
 
 .section3.active .step2infos {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.section3 .ingredientinput {
-  opacity: 0;
-  transform: translateX(100vw);
-}
-
 .section3.active .ingredientinput {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
 }
 
-.section2 .next-button {
-  opacity: 0;
-  transform: translateX(100vw);
-}
-
-.section2.active .next-button {
-  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
-}
-
-.section3 .next-button {
-  opacity: 0;
-  transform: translateX(100vw);
-}
-
 .section3.active .next-button {
-  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
-}
-
-.section1 .hero {
-  opacity: 0;
-  transform: translateX(100vw);
-}
-
-.section1.active .hero {
-  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.section1 .intro-text {
-  opacity: 0;
-  transform: translateX(100vw);
-}
-
-.section1.active .intro-text {
-  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
-}
-
-.section1 button {
-  opacity: 0;
-  transform: translateX(100vw);
-}
-
-.section1.active button {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
 }
