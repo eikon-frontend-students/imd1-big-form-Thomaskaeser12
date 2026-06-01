@@ -62,7 +62,8 @@ a {
 }
 .header-link:hover {
   text-decoration: underline;
-  animation: 0.5s ease-in-out 0s infinite alternate;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 3px;
 }
 ul {
   display: flex;
@@ -584,7 +585,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   }
 }
 
-@media (min-width: 320px) and (max-width: 1200px) {
+@media (min-width: 120px) and (max-width: 1200px) {
   body {
     overflow-y: auto;
   }
