@@ -8,8 +8,8 @@
   --font-size: 16px;
   --subtitle-font-size: 22px;
   --title-font-size: 52px;
-  --font-family: "Aktiv Grotesk";
-  --other-font-family: "Aktiv Grotesk Ex";
+  --font-family: "aktiv-grotesk", sans-serif;
+  --other-font-family: "aktiv-grotesk-extended", sans-serif;
 }
 
 /* ==== Base code === */
@@ -38,7 +38,7 @@ h1 {
   font-family: var(--other-font-family);
   font-size: var(--title-font-size);
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 98.918%;
   font-variant: small-caps;
   margin: 0;
@@ -46,7 +46,7 @@ h1 {
 
 p {
   text-align: center;
-  font-family: "Aktiv Grotesk";
+  font-family: var(--font-family);
   font-size: var(--subtitle-font-size);
   font-style: normal;
   font-weight: 400;
