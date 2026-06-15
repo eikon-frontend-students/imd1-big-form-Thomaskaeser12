@@ -114,19 +114,22 @@ function rgbToHsl(r, g, b) {
 }
 
 function switchTab(id) {
-  const sections = document.querySelectorAll("section");
+  const current = document.querySelector("section.active");
 
-  sections.forEach((section) => {
-    section.classList.remove("active");
-  });
+  const doSwitch = () => {
+    document.querySelectorAll("section").forEach((s) => {
+      s.classList.remove("active", "section-leaving");
+    });
+    document.getElementById(id)?.classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-  const targetSection = document.getElementById(id);
-  if (targetSection) {
-    targetSection.classList.add("active");
+  if (current) {
+    current.classList.add("section-leaving");
+    setTimeout(doSwitch, 250);
   } else {
-    console.error("La section avec l'id " + id + " n'existe pas !");
+    doSwitch();
   }
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function goToNext(nextId) {

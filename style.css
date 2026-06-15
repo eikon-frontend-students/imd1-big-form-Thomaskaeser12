@@ -65,6 +65,7 @@ a {
   text-underline-offset: 3px;
   text-decoration-thickness: 3px;
 }
+
 ul {
   display: flex;
   justify-content: center;
@@ -83,6 +84,7 @@ code {
   line-height: normal;
   letter-spacing: 1px;
 }
+
 input {
   color: var(--font-color);
   padding: 5px 0 5px 10px;
@@ -294,8 +296,8 @@ button:active {
 /* ==== Step1 / DropZone ==== */
 
 .drop-zone {
-  width: 320px;
-  height: 562px;
+  width: clamp(120px, 320px, 420px);
+  height: clamp(362px, 562px, 662px);
   border-radius: 25px;
   border: 7px dashed #f5dfca79;
   display: flex;
@@ -590,8 +592,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     overflow-y: auto;
   }
   .flavor-ingredients-input {
-    min-width: auto;
-    max-width: 350px;
+    min-width: 447.5px;
   }
 }
 @media (min-height: 500px) and (max-height: 877px) {
@@ -616,6 +617,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 .section1 .hero,
 .section1 .intro-text,
 .section1 button,
+.section2 .back,
 .section2 .infos,
 .section2 .drop-zone,
 .section2 .product-name,
@@ -641,6 +643,9 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
 }
 
+.section2.active .back {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 .section2.active .drop-zone {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
 }
@@ -675,4 +680,19 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 .section3.active .next-button {
   animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
+}
+@keyframes goToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+.section-leaving {
+  animation: goToLeft 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
 }
