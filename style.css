@@ -1,0 +1,698 @@
+:root {
+  --font-color: #fff;
+  --main-color: #921634;
+  --main-color-variant: #4d0819;
+  --second-color: #f5dfca;
+  --button-padding: 12px 40px;
+  --border-radius: 46px;
+  --font-size: 16px;
+  --subtitle-font-size: 22px;
+  --title-font-size: 52px;
+  --font-family: "aktiv-grotesk", sans-serif;
+  --other-font-family: "aktiv-grotesk-extended", sans-serif;
+}
+
+/* ==== Base code === */
+
+body {
+  font-family: var(--font-family);
+  background-color: #921634;
+  color: var(--font-color);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: 100vh;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/noise.png");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1 {
+  text-align: center;
+  font-family: var(--other-font-family);
+  font-size: var(--title-font-size);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 98.918%;
+  font-variant: small-caps;
+  margin: 0;
+}
+
+p {
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--subtitle-font-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+img {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: var(--font-color);
+  width: clamp(16px, 24px, 32px);
+}
+.header-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 3px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 21px;
+  flex-wrap: wrap;
+}
+
+code {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+input {
+  color: var(--font-color);
+  padding: 5px 0 5px 10px;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  outline: none;
+}
+
+textarea {
+  padding: 10px 0 0 10px;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  outline: none;
+  color: var(--font-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.52);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.52);
+  border-left: none;
+  border-right: none;
+  background: none;
+}
+
+textarea::placeholder {
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  opacity: 0.31;
+}
+
+.product-name-input:focus,
+textarea:focus {
+  border-color: var(--second-color);
+  box-shadow: 0 2px 0 var(--second-color);
+  transition: all 0.2s ease;
+}
+
+label:not(.drop-label) {
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ==== header ==== */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 5%;
+}
+
+.header-logo {
+  width: clamp(80px, 116px, 200px);
+}
+
+.header-logo2 {
+  width: clamp(80px, 116px, 200px);
+  visibility: hidden;
+}
+
+.header-link {
+  color: var(--font-color);
+  text-align: center;
+  font-family: var(--other-font-family);
+  font-size: 14px;
+  font-weight: 800;
+  font-variant: small-caps;
+  letter-spacing: 0.28px;
+  text-decoration: none;
+}
+
+/* ==== sections === */
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+.section1 {
+  background-color: #921634;
+  min-height: 100vh;
+}
+
+/* ==== buttons zone ==== */
+
+button {
+  display: inline-flex;
+  padding: var(--button-padding);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--second-color);
+  color: var(--main-color);
+  font-family: var(--other-font-family);
+  text-align: center;
+  font-size: var(--font-size);
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+button:hover {
+  background-color: var(--main-color);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
+
+.next-button {
+  position: relative;
+  z-index: 10;
+  margin: 30px 0 0px auto;
+  display: block;
+  width: 100%;
+  max-width: 150px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  margin-left: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back:hover {
+  transform: translateX(-18px);
+  animation: 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
+}
+
+.back-text {
+  font-family: var(--other-font-family);
+  font-size: var(--font-size);
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+/* ==== CTA LaunchPage ==== */
+
+.CTA {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25vh;
+}
+
+.CTA-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 61px;
+}
+
+.CTA-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+/* ==== Step1 ==== */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-infos-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left;
+}
+
+/* ==== Step1 / DropZone ==== */
+
+.drop-zone {
+  width: clamp(120px, 320px, 420px);
+  height: clamp(362px, 562px, 662px);
+  border-radius: 25px;
+  border: 7px dashed #f5dfca79;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.drop-zone.drag-over {
+  border-color: var(--second-color);
+}
+
+.drop-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.drop-acceptations {
+  font-size: 12px;
+  font-family: var(--font-family);
+  font-variant: default;
+  opacity: 0.51;
+}
+
+.drop-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ==== Step1 / Product Name ==== */
+
+.product-name {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-name-input {
+  background: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.52);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.52);
+  border-left: none;
+  border-right: none;
+  padding: 10px 10px;
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.product-name-input::placeholder {
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  opacity: 0.31;
+}
+
+/* ==== Step1 / Flavor Description ==== */
+
+.flavor-description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.flavor-description-input {
+  width: 100%;
+  max-width: 420px;
+  min-height: 150px;
+  box-sizing: border-box;
+}
+
+/* ==== Step1 / Color Picker ==== */
+
+.color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.color-picker-text {
+  display: flex;
+  gap: 8px;
+}
+
+.outputs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-input {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--font-color);
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.colorSelector {
+  color: var(--font-color);
+  font-family: var(--other-font-family);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.colorSelector:focus {
+  outline: none;
+}
+
+/* ==== Step2 ==== */
+
+.step2content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.step2infos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* ==== Step2 / Inputs ==== */
+
+.inputlabel {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.input-complete {
+  display: flex;
+  width: 100%;
+  max-width: 547.5px;
+  padding: 5px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.46);
+  box-sizing: border-box;
+}
+
+.product-infos-input {
+  background: none;
+  border: none;
+}
+
+.product-infos-input::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.input-unity {
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.product-infos-input::-webkit-outer-spin-button,
+.product-infos-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ==== Step2 / Ingredients ==== */
+
+.ingredientinput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.flavor-ingredients-input {
+  width: 100%;
+  min-width: 447.5px;
+  max-width: 547.5px;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+/* ==== @media queries ==== */
+
+@media (min-width: 300px) {
+  .all-inputs {
+    margin-top: 10vh;
+  }
+}
+@media (max-width: 968px) {
+  :root {
+    --title-font-size: 38px;
+    --subtitle-font-size: 18px;
+  }
+
+  .header-logo2 {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .image-infos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .infos {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 580px) {
+  :root {
+    --title-font-size: 28px;
+    --subtitle-font-size: 16px;
+  }
+
+  .drop-zone {
+    width: 260px;
+    height: 450px;
+  }
+
+  .drop-label {
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .drop-label svg {
+    transform: scale(0.7);
+  }
+
+  .color-picker-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .step2content {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .step2infos {
+    margin-top: 12vh;
+    transform: scale(125%);
+  }
+  .ingredientinput {
+    transform: scale(125%);
+    margin-top: 100px;
+  }
+  .all-inputs {
+    margin-top: 20vh;
+    transform: scale(125%);
+  }
+}
+
+@media (min-width: 120px) and (max-width: 1200px) {
+  body {
+    overflow-y: auto;
+  }
+  .flavor-ingredients-input {
+    min-width: 447.5px;
+  }
+}
+@media (min-height: 500px) and (max-height: 877px) {
+  body {
+    overflow-y: auto;
+  }
+}
+
+/* ==== animations ==== */
+
+@keyframes comeFromRight {
+  0% {
+    transform: translateX(100%) rotate(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px) rotate(0);
+    opacity: 1;
+  }
+}
+
+.section1 .hero,
+.section1 .intro-text,
+.section1 button,
+.section2 .back,
+.section2 .infos,
+.section2 .drop-zone,
+.section2 .product-name,
+.section2 .flavor-description,
+.section2 .color-picker-container,
+.section3 .step2infos,
+.section3 .ingredientinput,
+.section2 .next-button,
+.section3 .next-button {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
+.section1.active .hero {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section1.active .intro-text {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+}
+
+.section1.active button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
+}
+
+.section2.active .back {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.section2.active .drop-zone {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
+}
+
+.section2.active .product-name {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+}
+
+.section2.active .flavor-description {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
+}
+
+.section2.active .color-picker-container {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
+}
+
+.section2.active .infos {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section2.active .next-button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
+}
+
+.section3.active .step2infos {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.section3.active .ingredientinput {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 80ms forwards;
+}
+
+.section3.active .next-button {
+  animation: comeFromRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards;
+}
+@keyframes goToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+.section-leaving {
+  animation: goToLeft 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
